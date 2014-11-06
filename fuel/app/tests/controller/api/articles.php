@@ -102,6 +102,9 @@ class Test_Controller_Api_Articles extends \Fuel\Core\TestCase
 			$this->assertObjectHasAttribute('rank', $article);
 			$this->assertObjectHasAttribute('created_at', $article);
 		}
+		// Model_Article::get_recommended() が返す順番になっていること
+		$this->assertEquals($articles[0]->id, $json[0]->id);
+		$this->assertEquals($articles[1]->id, $json[1]->id);
 	}
 
 	protected function tearDown()
