@@ -23,9 +23,10 @@ class Test_Model_Article extends \Fuel\Core\TestCase
 			))->save();
 		}
 		
-		// rankの降順に並んでいることをテスト
 		$result = \Model_Article::get_recommended();
 		$this->assertCount(5, $result);
+		
+		// rankの降順に並んでいることをテスト
 		$response_ranks = \Arr::pluck($result, 'rank');
 		$prev_rank = PHP_INT_MAX;
 		foreach ($response_ranks as $rank)
