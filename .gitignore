@@ -32,3 +32,5 @@ desktop.ini
 /fuel/app/cache/*/*
 /fuel/app/config/crypt.php
 /fuel/app/tmp
+
+/fuel/app/config/*/migrations.php
