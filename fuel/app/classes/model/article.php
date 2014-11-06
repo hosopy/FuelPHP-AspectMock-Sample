@@ -24,4 +24,18 @@ class Model_Article extends \Orm\Model
 
 	protected static $_table_name = 'articles';
 
+	public static function get_table_name()
+	{
+		return static::$_table_name;
+	}
+
+	/**
+	 * オススメ記事リストを取得
+	 *
+	 * @return [Model_Article]
+	 */
+	public static function get_recommended()
+	{
+		return static::query()->order_by('rank', 'desc')->get();
+	}
 }
